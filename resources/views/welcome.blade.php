@@ -17,7 +17,7 @@
         </section>
         <section>
             <x-section-heading>Tags</x-section-heading>
-            <div class="mt-6 space-x-1 space-y-4">
+            <div class="mt-6 space-x-1 ">
                 <x-tag>Backend</x-tag>
                 <x-tag>Frontend</x-tag>
                 <x-tag>Api</x-tag>
