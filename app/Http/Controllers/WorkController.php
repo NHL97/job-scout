@@ -13,10 +13,9 @@ class WorkController extends Controller
     public function index()
     {
         $works = Work::all()->groupBy('featured');
-
         return view('works.index', [
             'featuredWorks' => $works[0],
-            'works' => $works,
+            'works' => $works[1],
             'tags' => Tag::all(),
         ]);
     }

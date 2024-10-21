@@ -10,11 +10,11 @@
         <h3 class="font-bold text-xl mt-3 group-hover:text-blue-800 transition-colors duration-300">{{ $work->title }}
         </h3>
 
-        <p class="text-sm text-gray-400 mt-auto">{{ $work->contract }} - {{ $work->salary }}</p>
+        <p class="text-sm text-gray-400 mt-auto">{{ $work->schedule }} - {{ $work->salary }}</p>
     </div>
 
     <div>
-        @foreach ($work->$tags as $tag)
+        @foreach ($work->tags as $tag)
         <x-tag :$tag />
         @endforeach
     </div>
