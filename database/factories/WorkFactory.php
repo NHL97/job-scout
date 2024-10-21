@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Employer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,12 +18,13 @@ class WorkFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->jobTitle(),
-            'salary' => $this->faker->randomElement(['10k', '20k', '30k', '40k', '50k', '60k', '70k', '80k', '90k', '100k']),
-            'location' => $this->faker->city(),
-            'url' => $this->faker->url(),
-            'featured' => $this->faker->boolean(),
-            'employer_id' => $this->faker->numberBetween(1, 10),
+            'employer_id' => Employer::factory(),
+            'title' => fake()->jobTitle,
+            'salary' => fake()->randomElement(['10,000 USD', '20,000 USD', '30,000 USD', '40,000 USD', '50,000 USD', '60,000 USD', '70,000 USD', '80,000 USD', '90,000 USD', '100,000 USD']),
+            'location' => "Remote",
+            'schedule' => "Full Time",
+            'url' => fake()->url,
+            'featured' => false,
         ];
     }
 }

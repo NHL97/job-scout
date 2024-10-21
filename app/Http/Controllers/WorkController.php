@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Work;
 use App\Http\Requests\StoreWorkRequest;
 use App\Http\Requests\UpdateWorkRequest;
 
 class WorkController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $works = Work::all()->groupBy('featured');
+
+        return view('works.index', [
+            'featuredWorks' => $works[0],
+            'works' => $works,
+            'tags' => Tag::all(),
+        ]);
     }
 
     /**
