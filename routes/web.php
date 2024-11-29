@@ -11,6 +11,10 @@ use App\Http\Controllers\SessionController;
 
 
 Route::get('/', [WorkController::class, 'index']);
+
+Route::get('/works/create', [WorkController::class, 'create'])->middleware('auth');
+Route::post('/works', [WorkController::class, 'store'])->middleware('auth');
+
 Route::get('/search', SearchController::class);
 Route::get('/tags/{tag:name}', TagController::class);
 

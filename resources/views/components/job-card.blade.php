@@ -2,7 +2,11 @@
 <x-panel class="flex flex-col text-center">
     <div class="self-start text-sm">{{ $work->employer->name }}</div>
     <div class="py-8">
-        <h3 class="group-hover:text-blue-800 text-xl font-bold transition-colors duration-300">{{ $work->title }}</h3>
+        <h3 class="group-hover:text-blue-800 text-xl font-bold transition-colors duration-300">
+            <a href="{{ $work->url }}" target="_blank">
+                {{ $work->title }}
+            </a>
+        </h3>
         <p class="text-sm mt-4">{{ $work->schedule }} - {{ $work->salary }}</p>
     </div>
 
@@ -13,6 +17,6 @@
             @endforeach
         </div>
 
-        <x-employer-logo :width="42" :height="42" />
+        <x-employer-logo :employer="$work->employer" :width="42" :height="42" />
     </div>
 </x-panel>
